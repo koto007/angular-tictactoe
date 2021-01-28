@@ -17,9 +17,9 @@ export class GamePageComponent implements OnInit {
   constructor() {
     for (let i = 0; i < this.gridSize; i++) {
       this.grid.push({
-        empty: false,
+        empty: true,
         cross: false,
-        circle: true
+        circle: false
       });
     }
   }
@@ -27,11 +27,10 @@ export class GamePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public addCross(){
-    // add a
+  public clickOnCell(cell: Cell): void{
+    cell.empty = false;
+    cell.circle = true;
   }
-  public addCircle(){
-    
-  }
+
 
 }

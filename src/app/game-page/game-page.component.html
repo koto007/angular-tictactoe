@@ -4,11 +4,9 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="grid" >
-                <div *ngFor="let cell of grid" class="cell">
-                    <div *ngIf="!cell.empty" 
-                     [class.cross]="cell.cross" [class.circle]="cell.circle"></div>
-                     <!--<div *ngIf="!cell.empty && cell.cross" class="cross"></div>
-                     <div *ngIf="!cell.empty && cell.circle" class="circle"></div>-->
+                <div *ngFor="let cell of grid" class="cell" (click)="clickOnCell(cell)">
+                    <div *ngIf="!cell.empty" [class.cross]="cell.cross" [class.circle]="cell.circle">
+                    </div>
                 </div>
             </div>
         </div>
