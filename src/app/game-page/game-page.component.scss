@@ -1,9 +1,10 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-   
+    max-width: 400px;
 }
 .cell {
+    position: relative;
     flex-basis: 33%;
     border: 1px solid #4a4a4a;
     display: flex;
@@ -14,5 +15,33 @@
         content: "";
         display: block;
         padding-top: 100%;
+    }
+}
+.circle {
+    border: 4px solid lightblue;
+    border-radius: 50%; 
+}
+.circle, .cross {
+    position:absolute;
+    width: 80%;
+    height: 80%;
+}
+.cross {
+    top: 50%;
+    
+    &:before, &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: lightcoral;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
     }
 }
